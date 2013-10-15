@@ -26,7 +26,9 @@ def html_for_city(city_name, image)
   current_temp = get_current_temperature(coordinates.first, coordinates.last)
   html = '<div class="col-md-3 chart well">'
   html << "<h2 class=\"clown\">#{city_name}</h2>"
-  html << '<p class="temperature">' + current_temp.to_s + '&deg; F</p>'
+  # html << '<p class="temperature">' + current_temp.to_s + '&deg; F</p>'
+    current_temp_float=current_temp.to_i
+  html << '<p class="temperature">' + current_temp_float.to_s + '&deg; F</p>'
 
   if image != nil
     html << "<img src=\"#{image}\">"
